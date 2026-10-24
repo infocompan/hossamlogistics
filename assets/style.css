@@ -14,3 +14,19 @@
 .footer .contact-options{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .footer .contact-option{padding:10px;border-color:rgba(255,255,255,.2)}
 @media(prefers-reduced-motion:reduce){.hero-logo,.contact-option{transition:none!important}}
+
+/* Detailed services: accessible native disclosure */
+.service-details{margin-top:20px;border-top:1px solid rgba(30,90,70,.17);padding-top:13px;text-align:right}
+.service-details summary{cursor:pointer;color:#075e45;font-weight:800;display:flex;align-items:center;justify-content:space-between;list-style:none;padding:8px 0;outline-offset:4px}
+.service-details summary::-webkit-details-marker{display:none}
+.service-details summary::after{content:'+';font-size:23px;line-height:1;transition:transform .22s ease}
+.service-details[open] summary::after{content:'−'}
+.service-details-body{padding:8px 0 10px;animation:detailShow .25s ease}
+.service-details-body h4{font-size:1rem;margin:8px 0 12px;color:inherit}
+.service-details-body ul{padding:0 20px 0 0;margin:0;list-style:disc}
+.service-details-body li{line-height:1.9;margin-bottom:12px;font-size:.93rem;color:#43544c}
+.service-details-body li strong{color:#243b32}
+.service-details-body .regulatory-note{font-size:.85rem;line-height:1.8;color:#57665e;background:#f3f7f4;border-right:3px solid #08754d;padding:10px 12px;border-radius:5px}
+.service-details-body .official-link{display:inline-block;color:#075e45;text-decoration:underline;text-underline-offset:3px;font-size:.88rem;margin-top:8px}
+@keyframes detailShow{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.service-details-body{animation:none}}
